@@ -4,11 +4,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
+    @user = User.new(user_params)
     if @user.save
+      session[:user] = @user.id
+      flash[:notice] = ""
       redirect_to @user
     else
-      flash[:notice] = errors.full_messages.join(", ")
+      flash[:notice] = "Invalid Info"
     end
+  end
+
+  def show
+    @lists = current_user.lists
+  end
+  private
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
