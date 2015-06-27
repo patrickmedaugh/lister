@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @lists = current_user.lists
   end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)
