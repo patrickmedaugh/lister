@@ -33,6 +33,7 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to current_user
   end
+
   private
   def task_params
     params.require(:task).permit(:title, :description, :status, :due_date)

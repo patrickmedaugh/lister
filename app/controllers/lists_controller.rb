@@ -16,7 +16,8 @@ class ListsController < ApplicationController
     @list = List.new
   end
   def show
-    @list = List.find(params[:id])
+    @list        = List.find(params[:id])
+    @othertasks  = @list.tasks.where(status: ["complete", "pending"])
     @incompletes = @list.tasks.where(status: "incomplete")
   end
 

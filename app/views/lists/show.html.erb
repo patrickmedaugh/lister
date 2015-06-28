@@ -1,24 +1,56 @@
-<h3><%= @list.title %></h3>
-<% @incompletes.each do |task| %>
-<div class='card cyan lighten-1 col s3'>
-  <div class='card-content white-text'>
-
-  <h4><%= task.title %> </h4>
-  <p><%= task.description %></p>
-  <p><%= task.due_date %> <%= task.status %> </p>
-  <br />
-  <div class='waves-effect waves-light btn'>
-    <%= link_to "Edit", edit_task_path(task_id: task.id) %>
-  </div>
-  <div class='waves-effect waves-light btn'>
-    <%= link_to "Delete", task_path(task_id: task.id), method: :delete %>
-  </div>
+<div class='waves-effect waves-light btn'>
+  <%= link_to "All Lists", user_path(current_user) %>
 </div>
+<h3><%= @list.title %></h3>
+<h5>Sort By</h5>
+<div id='title' class='waves-effect waves-light btn'>Title</div>
+<div id='status' class='waves-effect waves-light btn'>Status</div>
+<div id='due_date' class='waves-effect waves-light btn'>Due Date</div>
+<% @incompletes.each do |task| %>
+  <div class='card cyan lighten-1 col s3'>
+    <div class='card-content white-text'>
+      <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn pending'>Pending</div>
+      <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn completed'>Complete</div>
+      <div data="<%="#{task.id}"%>" class='waves-effect waves-light btn incomplete'>Incomplete</div>
+      <h4><%= task.title %> </h4>
+      <p><%= task.description %></p>
+      <p> <%= task.status %></p>
+      <p><%= task.due_date %></p>
+      <br />
+      <div class='waves-effect waves-light btn'>
+        <%= link_to "Edit", edit_task_path(task_id: task.id) %>
+      </div>
+      <div class='waves-effect waves-light btn'>
+        <%= link_to "Delete", task_path(task_id: task.id), method: :delete %>
+      </div>
+  </div>
 </div>
 <% end %>
+<div class='othertasks hide'>
+<% @othertasks.each do |task| %>
+  <div class='card cyan lighten-1 col s3'>
+    <div class='card-content white-text'>
+      <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn pending'>Pending</div>
+      <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn completed'>Complete</div>
+      <div data="<%="#{task.id}"%>" class='waves-effect waves-light btn incomplete'>Incomplete</div>
+      <h4><%= task.title %> </h4>
+      <p><%= task.description %></p>
+      <p> <%= task.status %></p>
+      <p><%= task.due_date %> </p>
+      <br />
+      <div class='waves-effect waves-light btn'>
+        <%= link_to "Edit", edit_task_path(task_id: task.id) %>
+      </div>
+      <div class='waves-effect waves-light btn'>
+        <%= link_to "Delete", task_path(task_id: task.id), method: :delete %>
+      </div>
+  </div>
+</div>
+<% end %>
+</div>
 <div class='waves-effect waves-light btn'>
   <%= link_to "Add Task", new_task_path(@list) %>
 </div>
-<div class='waves-effect waves-light btn'>
-  <%= link_to "All Lists", user_path(current_user) %>
+<div id='task-show' class='waves-effect wave-light btn'>
+Show All Tasks
 </div>
