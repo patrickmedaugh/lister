@@ -32,6 +32,31 @@
         null,
         null
       ],
+      "/Users/pmedaugh/Documents/Turing/lister/app/controllers/tasks_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/pmedaugh/Documents/Turing/lister/app/models/list.rb": [
         1,
         1,
@@ -68,6 +93,7 @@
         null,
         null,
         1,
+        12,
         null,
         null,
         1,
@@ -95,7 +121,7 @@
         2,
         null,
         1,
-        2,
+        5,
         null,
         null,
         1,
@@ -115,6 +141,19 @@
         null,
         1,
         null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        1,
         1,
         null,
         1,
@@ -133,6 +172,6 @@
         null
       ]
     },
-    "timestamp": 1435443570
+    "timestamp": 1435456670
   }
 }

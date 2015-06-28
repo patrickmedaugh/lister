@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @lists = List.where(user_id: current_user.id, archived?: false)
   end
 
   private

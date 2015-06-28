@@ -36,7 +36,20 @@ class ListsController < ApplicationController
 
   def destroy
   end
-  def archived
+
+  def archive
+    @list = List.find(params[:id])
+    @list.update(archived?: true)
+    redirect_to current_user
+  end
+
+  def unarchive
+    @list = List.find(params[:id])
+    @list.update(archived?: false)
+    redirect_to current_user
+  end
+  def show_archived
+    @lists = List.where(archived?: true)
   end
   private
   def list_params

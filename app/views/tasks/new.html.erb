@@ -1,0 +1,13 @@
+<%= form_for(@task) do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :status %>
+<%= f.select(:status) do %>
+  <% ['incomplete', 'pending', 'completed'].each do |status| -%>
+    <%= content_tag(:option, status, value: status) %>
+  <% end %>
+<% end %>
+<%= f.label :due_date %>
+<%= f.date_select :due_date %>
+<%= f.submit %>
+<% end %>
