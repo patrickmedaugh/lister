@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources 'users'
   get '/lists/:id/tasks', to: 'tasks#new', as: 'new_task'
   post '/lists/:id/tasks', to: 'tasks#create', as: 'tasks'
-  get '/lists/:id/tasks/:task', to: 'tasks#edit', as: 'edit_task'
-  patch '/lists/:id/tasks/:task', to: 'tasks#update'
-  delete '/lists/:id/tasks/:task', to: 'tasks#destroy', as:'destroy_task'
-
+  get '/lists/tasks/:task_id/edit', to: 'tasks#edit', as: 'edit_task'
+  patch '/lists/tasks/:task_id/edit', to: 'tasks#update'
+  # delete '/lists/tasks/:task_id', to: 'tasks#destroy', as: 'destroy_task'
+  delete '/lists/tasks/:id', to: 'tasks#destroy', as: 'task'
 end
