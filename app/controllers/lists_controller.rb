@@ -17,6 +17,7 @@ class ListsController < ApplicationController
   end
   def show
     @list = List.find(params[:id])
+    @incompletes = @list.tasks.where(status: "incomplete")
   end
 
   def edit

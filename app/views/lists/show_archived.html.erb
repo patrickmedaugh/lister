@@ -1,7 +1,11 @@
 <% @lists.each do |list| %>
-  <p>  <%= list.title %>
+<div class='card cyan lighten-1 col s3'>
+  <div class='card-content white-text'>
+  <h3>  <%= list.title %></h3>
   <%= link_to "Unarchive", unarchive_path(list) %>
   <%= link_to "Delete", list_path(list), method: :delete %>
   </p>
+</div>
+</div>
 <% end %>
-<%= link_to "All Lists", user_path(current_user) %>
+<div class='waves-effect waves-light btn'><%= link_to "All Lists", user_path(current_user) %></div>

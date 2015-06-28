@@ -12,7 +12,7 @@ class TasksController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @task = Task.find(params[:task_id])
   end
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:task_id])
+    @task = Task.find(params[:id])
     @task.destroy
     redirect_to current_user
   end

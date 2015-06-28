@@ -1,9 +1,16 @@
 <h3> Welcome, <%= current_user.username %></h3>
   <% @lists.each do |list| %>
-    <div><%= link_to list.title, list_path(list) %>
-      <%= link_to "Edit", edit_list_path(list) %>
-      <%= link_to "Archive", archive_path(list) %>
+    <div class='card cyan lighten-1 col s3'>
+      <div class='card-content white-text'>
+        <h3><%= link_to list.title, list_path(list) %></h3>
+        <div class='waves-effect waves-light btn'>
+        <p><%= link_to "Edit", edit_list_path(list) %>
+        </div>
+        <div class='waves-effect waves-light btn'>
+        <%= link_to "Archive", archive_path(list) %></p>
+      </div>
+    </div>
     </div>
   <% end %>
-<%= link_to "New List", new_list_path %>
-<%= link_to "Show Archived", archived_path %>
+<div class='waves-effect waves-light btn'><%= link_to "New List", new_list_path %></div>
+<div class='waves-effect waves-light btn'><%= link_to "Show Archived", archived_path %></div>
