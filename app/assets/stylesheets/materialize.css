@@ -5681,7 +5681,6 @@ button.btn-floating {
 .dropdown-content {
   background-color: #FFFFFF;
   margin: 0;
-  display: none;
   min-width: 100px;
   max-height: 650px;
   overflow-y: auto;
@@ -5811,7 +5810,6 @@ a.waves-effect .waves-ripple {
   z-index: -1; }
 
 .modal {
-  display: none;
   position: fixed;
   left: 0;
   right: 0;
@@ -5856,7 +5854,6 @@ a.waves-effect .waves-ripple {
   height: 115%;
   width: 100%;
   background: #000;
-  display: none;
   will-change: opacity; }
 
 .modal.modal-fixed-footer {
@@ -5907,7 +5904,6 @@ a.waves-effect .waves-ripple {
 
 .collapsible-body {
   overflow: hidden;
-  display: none;
   border-bottom: 1px solid #ddd;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -5977,7 +5973,6 @@ a.waves-effect .waves-ripple {
 
 .materialbox-caption {
   position: fixed;
-  display: none;
   color: #fff;
   line-height: 50px;
   bottom: 0;
@@ -6508,8 +6503,6 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
     top: -14px;
     font-size: 0.8rem; }
 
-select {
-  display: none; }
 
 select.browser-default {
   display: block; }
