@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   get '/title/:id', to: 'filters#title'
   get '/status/:id', to: 'filters#status'
   get '/due-date/:id', to: 'filters#due_date'
+  #task CRUD
+  get 'tasks/:id/tags', to: 'tags#new', as: 'new_tag'
+  post 'tasks/:id/tags', to: 'tags#create', as: 'tags'
+  get 'tags/:id', to: 'tags#show', as: 'tag'
 end

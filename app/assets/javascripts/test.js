@@ -54,7 +54,6 @@ $(document).ready(function(){
   $('#task-show').click(function(){
     $('.othertasks').toggleClass('hide')
   })
-
   //--------SORTING-------
   $('#inc-title').click(function(){
     var id = ($(this).attr("data"));
@@ -169,4 +168,6 @@ $(document).ready(function(){
       }
     });
   });
+
+
 });
