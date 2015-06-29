@@ -28,8 +28,14 @@
 </div>
 <% end %>
 </div>
+
 <div class='othertasks hide'>
+
 <h3>Other Tasks</h3>
+<!-- <h5>Sort By</h5>
+<div id='oth-title'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Title</div>
+<div id='oth-status'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Status</div>
+<div id='oth-due_date'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Due Date</div> -->
 <% @othertasks.each do |task| %>
   <div class='card cyan lighten-1 col s3'>
     <div class='card-content white-text'>

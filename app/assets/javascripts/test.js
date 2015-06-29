@@ -49,8 +49,10 @@ $(document).ready(function(){
       }//success
     });//ajax
   });//click
+
+  //SHOWTASKS
   $('#task-show').click(function(){
-    $('.othertasks').removeClass('hide')
+    $('.othertasks').toggleClass('hide')
   })
 
   //--------SORTING-------
@@ -82,6 +84,8 @@ $(document).ready(function(){
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a href='/lists/tasks/" + incompletes[i].id + "/edit'>Edit</a>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a rel='nofollow' data-method='delete' href='/lists/tasks/" + id + "?task_id=" + incompletes[i].id + "'>Delete</a>");
         }//for
       },//success
       error: function(){
@@ -117,6 +121,8 @@ $(document).ready(function(){
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a href='/lists/tasks/" + incompletes[i].id + "/edit'>Edit</a>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a rel='nofollow' data-method='delete' href='/lists/tasks/" + id + "?task_id=" + incompletes[i].id + "'>Delete</a>");
         }//for
       },//success
       error: function(){
@@ -154,6 +160,8 @@ $(document).ready(function(){
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a href='/lists/tasks/" + incompletes[i].id + "/edit'>Edit</a>");
+          $('#task-content-' + incompletes[i].id).append("<div class='waves-effect waves-light btn'><a rel='nofollow' data-method='delete' href='/lists/tasks/" + id + "?task_id=" + incompletes[i].id + "'>Delete</a>");
         }//for
       },//success
       error: function(){
@@ -161,5 +169,4 @@ $(document).ready(function(){
       }
     });
   });
-
 });
