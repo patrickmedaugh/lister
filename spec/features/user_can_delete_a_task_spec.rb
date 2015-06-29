@@ -9,7 +9,7 @@ RSpec.describe 'user' do
       List.create(id: 1, title:"Sample", user_id: 1)
     }
     let(:task){
-      Task.create(id: 1, title:"testtask", status: "incomplete", list_id: 1)
+      Task.create(id: 10, title:"testtask", status: "incomplete", list_id: 1)
     }
     it 'can delete a task' do
       user;list;task

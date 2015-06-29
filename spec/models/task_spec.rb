@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   context 'with valid params' do
     let(:task){
-      Task.create()
+      Task.create(title: 'true')
     }
     it 'belongs to a list' do
       expect(task.list).to eq(nil)

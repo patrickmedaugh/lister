@@ -73,10 +73,15 @@ $(document).ready(function(){
         $('#incompletes').empty();
         console.log(incompletes);
         for(i=0; i<incompletes.length; i++){
-          $('#incompletes').append("<p>" + incompletes[i].title + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].description + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].status + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].due_date + "</p>");
+          $('#incompletes').append("<div class='card cyan lighten-1 col s3' id='task-" + incompletes[i].id +"'</div>")
+          $('#task-' + incompletes[i].id).append("<div class='card-content white-text' id='task-content-" + incompletes[i].id + "'</div>")
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn pending'>Pending</div>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn completed'>Complete</div>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn incomplete'>Incomplete</div>");
+          $('#task-content-' + incompletes[i].id).append("<h4>" + incompletes[i].title + "</h4>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
         }//for
       },//success
       error: function(){
@@ -103,10 +108,15 @@ $(document).ready(function(){
         $('#incompletes').empty();
         console.log(incompletes);
         for(i=0; i<incompletes.length; i++){
-          $('#incompletes').append("<p>" + incompletes[i].title + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].description + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].status + "</p>");
-          $('#incompletes').append("<p>" + incompletes[i].due_date + "</p>");
+          $('#incompletes').append("<div class='card cyan lighten-1 col s3' id='task-" + incompletes[i].id +"'</div>")
+          $('#task-' + incompletes[i].id).append("<div class='card-content white-text' id='task-content-" + incompletes[i].id + "'</div>")
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn pending'>Pending</div>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn completed'>Complete</div>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn incomplete'>Incomplete</div>");
+          $('#task-content-' + incompletes[i].id).append("<h4>" + incompletes[i].title + "</h4>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
         }//for
       },//success
       error: function(){
@@ -138,7 +148,9 @@ $(document).ready(function(){
           $('#incompletes').append("<div class='card cyan lighten-1 col s3' id='task-" + incompletes[i].id +"'</div>")
           $('#task-' + incompletes[i].id).append("<div class='card-content white-text' id='task-content-" + incompletes[i].id + "'</div>")
           $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn pending'>Pending</div>");
-          $('#task-content-' + incompletes[i].id).append("<h3>" + incompletes[i].title + "</h3>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn completed'>Complete</div>");
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn incomplete'>Incomplete</div>");
+          $('#task-content-' + incompletes[i].id).append("<h4>" + incompletes[i].title + "</h4>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
           $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
