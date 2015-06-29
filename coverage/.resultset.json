@@ -1,16 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/pmedaugh/Documents/Turing/lister/app/controllers/sessions_controller.rb": [
+      "/Users/pmedaugh/Documents/Turing/lister/app/controllers/filters_controller.rb": [
         1,
         1,
-        2,
-        2,
-        1,
-        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
         1,
+        0,
+        0,
+        0,
+        null,
         null,
         null,
         null
@@ -32,9 +43,25 @@
         null,
         null
       ],
+      "/Users/pmedaugh/Documents/Turing/lister/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/pmedaugh/Documents/Turing/lister/app/controllers/statuses_controller.rb": [
         1,
+        null,
         1,
+        0,
         0,
         0,
         0,
@@ -92,6 +119,7 @@
         1,
         1,
         1,
+        null,
         null,
         1,
         1,
@@ -166,6 +194,7 @@
         1,
         9,
         9,
+        9,
         null,
         null,
         1,
@@ -224,6 +253,6 @@
         null
       ]
     },
-    "timestamp": 1435524686
+    "timestamp": 1435536596
   }
 }

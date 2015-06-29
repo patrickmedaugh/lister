@@ -3,19 +3,20 @@
 </div>
 <h3><%= @list.title %></h3>
 <h5>Sort By</h5>
-<div id='title' class='waves-effect waves-light btn'>Title</div>
-<div id='status' class='waves-effect waves-light btn'>Status</div>
-<div id='due_date' class='waves-effect waves-light btn'>Due Date</div>
+<div id='inc-title'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Title</div>
+<div id='inc-status'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Status</div>
+<div id='inc-due_date'data="<%="#{@list.id}"%>" class='waves-effect waves-light btn'>Due Date</div>
+<div id='incompletes'>
 <% @incompletes.each do |task| %>
   <div class='card cyan lighten-1 col s3'>
-    <div class='card-content white-text'>
+    <div class="card-content white-text task">
       <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn pending'>Pending</div>
       <div data="<%="#{task.id}"%>"class='waves-effect waves-light btn completed'>Complete</div>
       <div data="<%="#{task.id}"%>" class='waves-effect waves-light btn incomplete'>Incomplete</div>
-      <h4><%= task.title %> </h4>
-      <p><%= task.description %></p>
-      <p> <%= task.status %></p>
-      <p><%= task.due_date %></p>
+      <h4 id="title-<%="#{task.id}"%>" class="task-<%="#{task.id}"%>"><%= task.title %> </h4>
+      <p id="description-<%="#{task.id}"%>"><%= task.description %></p>
+      <p id="status-<%="#{task.id}"%>"><%= task.status %></p>
+      <p id="due_date-<%="#{task.id}"%>" class="task-<%="#{task.id}"%>"><%= task.due_date %></p>
       <br />
       <div class='waves-effect waves-light btn'>
         <%= link_to "Edit", edit_task_path(task_id: task.id) %>
@@ -26,7 +27,9 @@
   </div>
 </div>
 <% end %>
+</div>
 <div class='othertasks hide'>
+<h3>Other Tasks</h3>
 <% @othertasks.each do |task| %>
   <div class='card cyan lighten-1 col s3'>
     <div class='card-content white-text'>
@@ -35,7 +38,7 @@
       <div data="<%="#{task.id}"%>" class='waves-effect waves-light btn incomplete'>Incomplete</div>
       <h4><%= task.title %> </h4>
       <p><%= task.description %></p>
-      <p> <%= task.status %></p>
+      <p class="<%="task-status-#{task.id}" %>"> <%= task.status %></p>
       <p><%= task.due_date %> </p>
       <br />
       <div class='waves-effect waves-light btn'>

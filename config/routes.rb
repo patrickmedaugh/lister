@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/completed/:id', to: 'statuses#completed'
   get '/incomplete/:id', to: 'statuses#incomplete'
   #filter AJAX routes
-  get '/title', to: 'filter#title'
-  get '/status', to: 'filter#status'
-  get '/due-date', to: 'filter#due_date'
+  get '/title/:id', to: 'filters#title'
+  get '/status/:id', to: 'filters#status'
+  get '/due-date/:id', to: 'filters#due_date'
 end

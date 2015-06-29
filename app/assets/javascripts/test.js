@@ -7,6 +7,8 @@ $(document).ready(function(){
       status: 200,
       url: "/pending/" + id,
       success: function(data){
+        $('#status-' + id).empty();
+        $('#status-' + id).append(data.status);
         console.log(data);
       },
       error: function(){
@@ -23,6 +25,8 @@ $(document).ready(function(){
       url: "/incomplete/" + id,
       success: function(data){
         console.log(data);
+        $('#status-' + data.id).empty();
+        $('#status-' + data.id).append(data.status);
       },
       error: function(){
         console.log("An error occured retrieving incomplete");
@@ -37,6 +41,8 @@ $(document).ready(function(){
       url: "/completed/" + id,
       success: function(data){
         console.log(data);
+        $('#status-' + data.id).empty();
+        $('#status-' + data.id).append(data.status);
       },
       error: function(){
         console.log("An error occured retrieving completed");
@@ -46,4 +52,102 @@ $(document).ready(function(){
   $('#task-show').click(function(){
     $('.othertasks').removeClass('hide')
   })
+
+  //--------SORTING-------
+  $('#inc-title').click(function(){
+    var id = ($(this).attr("data"));
+    $.ajax({
+      type: "GET",
+      status: 200,
+      url: "/title/" + id,
+      success: function(data){
+        var incompletes = [];
+        var othertasks = [];
+        for(i=0; i<data.length; i++){
+          if(data[i].status === "incomplete"){
+            incompletes.push(data[i]);
+          }else{
+            othertasks.push(data[i]);
+          };//if
+        };//for
+        $('#incompletes').empty();
+        console.log(incompletes);
+        for(i=0; i<incompletes.length; i++){
+          $('#incompletes').append("<p>" + incompletes[i].title + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].description + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].status + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].due_date + "</p>");
+        }//for
+      },//success
+      error: function(){
+        console.log("Something went wrong");
+      }
+    });
+  });
+  $('#inc-due_date').click(function(){
+    var id = ($(this).attr("data"));
+    $.ajax({
+      type: "GET",
+      status: 200,
+      url: "/due-date/" + id,
+      success: function(data){
+        var incompletes = [];
+        var othertasks = [];
+        for(i=0; i<data.length; i++){
+          if(data[i].status === "incomplete"){
+            incompletes.push(data[i]);
+          }else{
+            othertasks.push(data[i]);
+          };//if
+        };//for
+        $('#incompletes').empty();
+        console.log(incompletes);
+        for(i=0; i<incompletes.length; i++){
+          $('#incompletes').append("<p>" + incompletes[i].title + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].description + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].status + "</p>");
+          $('#incompletes').append("<p>" + incompletes[i].due_date + "</p>");
+        }//for
+      },//success
+      error: function(){
+        console.log("Something went wrong");
+      }
+    });
+  });
+
+  $('#inc-status').click(function(data){
+    var id = ($(this).attr("data"));
+    $.ajax({
+      type: "GET",
+      status: 200,
+      url: "/status/" + id,
+      success: function(data){
+        var incompletes = [];
+        var othertasks = [];
+        for(i=0; i<data.length; i++){
+          if(data[i].status === "incomplete"){
+            incompletes.push(data[i]);
+          }else{
+            othertasks.push(data[i]);
+          };//if
+        };//for
+        $('#incompletes').empty();
+        console.log(incompletes);
+        console.log("list id: " + id);
+        for(i=0; i<incompletes.length; i++){
+          $('#incompletes').append("<div class='card cyan lighten-1 col s3' id='task-" + incompletes[i].id +"'</div>")
+          $('#task-' + incompletes[i].id).append("<div class='card-content white-text' id='task-content-" + incompletes[i].id + "'</div>")
+          $('#task-content-' + incompletes[i].id).append("<div data=" + incompletes[i].id + " class='waves-effect waves-light btn pending'>Pending</div>");
+          $('#task-content-' + incompletes[i].id).append("<h3>" + incompletes[i].title + "</h3>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].description + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].status + "</p>");
+          $('#task-content-' + incompletes[i].id).append("<p>" + incompletes[i].due_date + "</p>");
+        }//for
+      },//success
+      error: function(){
+        console.log("Something went wrong");
+      }
+    });
+  });
+
 });
